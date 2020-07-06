@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Layout, Col, Row, Spin } from "antd";
 import HeaderSection from "../components/header-section";
+import DefinitionSection from "../components/definition-section";
+import ContentSection from "../components/content-section";
 
 const { Content, Footer } = Layout;
 const { useBreakpoint } = Grid;
@@ -42,6 +44,8 @@ export default function Home() {
       <Content>
         <Row>
           <HeaderSection isMobile={isMobile} />
+          <DefinitionSection isMobile={isMobile} />
+          <ContentSection isMobile={isMobile} />
         </Row>
       </Content>
       <Footer style={{ background: "#0b24fb" }}>

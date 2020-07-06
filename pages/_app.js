@@ -1,5 +1,7 @@
 import Head from "next/head";
 import "antd/dist/antd.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -26,6 +28,24 @@ export default function MyApp({ Component, pageProps }) {
           }
           .ant-layout-header {
             background: #ffffff;
+          }
+          .section-title-text {
+            font-size: 32px;
+            font-weight: 900;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #ffffff;
+            margin-top: 100px;
+          }
+          .section-desc-text {
+            font-size: 18px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.5;
+            color: #ffffff;
           }
         `}
       </style>

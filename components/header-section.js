@@ -34,7 +34,7 @@ export default function HeaderSection(props) {
             />
           </div>
           <Row>
-            <Col span={24} style={{ marginTop: "170px" }}>
+            <Col span={24} style={{ marginTop: "190px" }}>
               <div className="content-text title-text">WEEKEND FROM HOME</div>
             </Col>
             <Col span={24}>
@@ -68,7 +68,7 @@ export default function HeaderSection(props) {
           background-size: auto 100%;
           background-color: #eebece;
           object-fit: cover;
-          height: ${isMobile ? "860px" : "1020px"};
+          height: ${isMobile ? "860px" : "1150px"};
           padding-top: 3%;
           padding-bottom: 3%;
         }
