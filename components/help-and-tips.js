@@ -95,7 +95,7 @@ export default function HelpAndTips(props) {
         }
         .text-over-img {
           text-align: left;
-          width: 210px;
+          width: 200px;
           height: 38px;
           font-size: 16px;
           font-weight: bold;
