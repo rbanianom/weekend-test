@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Layout, Col, Row, Spin } from "antd";
+import HeaderSection from "../components/header-section";
 
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 const { useBreakpoint } = Grid;
 
 export default function Home() {
@@ -38,8 +39,11 @@ export default function Home() {
 
   return (
     <Layout>
-      <Header>{/* header here */}</Header>
-      <Content>{/* content here */}</Content>
+      <Content>
+        <Row>
+          <HeaderSection isMobile={isMobile} />
+        </Row>
+      </Content>
       <Footer style={{ background: "#0b24fb" }}>
         <Row style={{ position: "relative" }}>
           <Col span={12}>
