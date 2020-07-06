@@ -68,7 +68,7 @@ export default function HeaderSection(props) {
           background-size: auto 100%;
           background-color: #eebece;
           object-fit: cover;
-          height: ${isMobile ? "860px" : "1150px"};
+          height: ${isMobile ? "880px" : "1150px"};
           padding-top: 3%;
           padding-bottom: 3%;
         }

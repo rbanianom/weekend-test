@@ -3,6 +3,7 @@ import { Grid, Layout, Col, Row, Spin } from "antd";
 import HeaderSection from "../components/header-section";
 import DefinitionSection from "../components/definition-section";
 import ContentSection from "../components/content-section";
+import LastSection from "../components/last-section";
 
 const { Content, Footer } = Layout;
 const { useBreakpoint } = Grid;
@@ -46,6 +47,7 @@ export default function Home() {
           <HeaderSection isMobile={isMobile} />
           <DefinitionSection isMobile={isMobile} />
           <ContentSection isMobile={isMobile} />
+          <LastSection isMobile={isMobile} />
         </Row>
       </Content>
       <Footer style={{ background: "#0b24fb" }}>

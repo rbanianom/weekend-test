@@ -5,7 +5,7 @@ export default function DefinitionSection(props) {
 
   return (
     <>
-      <Col span={24} style={{ backgroundColor: "#eebece" }}>
+      <Col span={24} style={{ backgroundColor: "#eebece", marginTop: "-1px" }}>
         <div style={{ textAlign: "right" }}>
           <img
             src="group-4.png"
