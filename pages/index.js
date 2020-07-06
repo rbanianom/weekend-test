@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Layout, Col, Row, Spin } from "antd";
+import { Grid, Layout, Col, Row, Spin, notification } from "antd";
 import HeaderSection from "../components/header-section";
 import DefinitionSection from "../components/definition-section";
 import ContentSection from "../components/content-section";
@@ -12,8 +12,36 @@ export default function Home() {
   const screens = useBreakpoint();
   const [isMobile, setIsMobile] = useState(false);
   const [initLoading, setInitLoading] = useState(true);
+  const [testimonials, setTestimonials] = useState([]);
+  const [helpTips, setHelpTips] = useState([]);
 
   useEffect(() => {
+    async function loadData() {
+      const endpointTesti =
+        "https://wknd-take-home-challenge-api.herokuapp.com/testimonial";
+      const endpointHelpTips =
+        "https://wknd-take-home-challenge-api.herokuapp.com/help-tips";
+
+      try {
+        const responseTesti = await fetch(endpointTesti, { method: "GET" });
+        const dataTesti = await responseTesti.json();
+
+        const responseHelpTips = await fetch(endpointHelpTips, {
+          method: "GET",
+        });
+        const dataHelpTips = await responseHelpTips.json();
+
+        setTestimonials(dataTesti);
+        setHelpTips(dataHelpTips);
+        setInitLoading(false);
+      } catch (err) {
+        notification.error({
+          message: "Error",
+          description: "Please reload your browser",
+        });
+      }
+    }
+
     if (screens.sm && screens.sm && !screens.lg) {
       setIsMobile(true);
     } else if (screens.xs) {
@@ -21,7 +49,8 @@ export default function Home() {
     } else {
       setIsMobile(false);
     }
-    setInitLoading(false);
+
+    loadData();
   }, [screens]);
 
   if (initLoading) {
@@ -46,7 +75,11 @@ export default function Home() {
         <Row>
           <HeaderSection isMobile={isMobile} />
           <DefinitionSection isMobile={isMobile} />
-          <ContentSection isMobile={isMobile} />
+          <ContentSection
+            isMobile={isMobile}
+            testimonials={testimonials}
+            helpTips={helpTips}
+          />
           <LastSection isMobile={isMobile} />
         </Row>
       </Content>

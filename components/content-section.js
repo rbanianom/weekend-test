@@ -3,7 +3,7 @@ import Testimonial from "./testimonial";
 import HelpAndTips from "./help-and-tips";
 
 export default function ContentSection(props) {
-  const { isMobile } = props;
+  const { isMobile, testimonials, helpTips } = props;
   return (
     <>
       <Col
@@ -13,7 +13,7 @@ export default function ContentSection(props) {
           textAlign: "-webkit-center",
         }}
       >
-        <Testimonial isMobile={isMobile} />
+        <Testimonial isMobile={isMobile} testimonials={testimonials} />
         <div style={{ textAlign: "-webkit-center", padding: "0px 32px" }}>
           <p className="section-title-text">POV</p>
           <p className="section-desc-text">
@@ -32,7 +32,7 @@ export default function ContentSection(props) {
             prevents our being able to do what we like best
           </p>
         </div>
-        <HelpAndTips isMobile={isMobile} />
+        <HelpAndTips isMobile={isMobile} helpTips={helpTips} />
       </Col>
       <style jsx>{`
         .section-title-text {

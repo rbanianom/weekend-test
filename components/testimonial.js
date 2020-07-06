@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 
 export default function Testimonial(props) {
-  const { isMobile } = props;
+  const { isMobile, testimonials } = props;
 
   const settings = {
     className: "slider variable-width",
@@ -45,33 +45,14 @@ export default function Testimonial(props) {
     >
       <p className="testi-text">Testimonial</p>
       <Slider {...settings}>
-        <div style={wrapperWidth}>
-          <div style={wrapperStyle}>
-            <div className="title-text">Blu Kicks</div>
-            <div className="content-text">
-              Places where you can leverage tools and software to free up time
-              to focus on growing the business.
+        {testimonials.map((value) => (
+          <div style={wrapperWidth} key={value.id}>
+            <div style={wrapperStyle}>
+              <div className="title-text">{value.by}</div>
+              <div className="content-text">{value.testimony}</div>
             </div>
           </div>
-        </div>
-        <div style={wrapperWidth}>
-          <div style={wrapperStyle}>
-            <div className="title-text">Angelus</div>
-            <div className="content-text">
-              All those apps took me months to get running. Now the site
-              practically runs itself!
-            </div>
-          </div>
-        </div>
-        <div style={wrapperWidth}>
-          <div style={wrapperStyle}>
-            <div className="title-text">SoYoung</div>
-            <div className="content-text">
-              Unless you have a truly unique product, it will be very hard to
-              differentiate and gain brand traction
-            </div>
-          </div>
-        </div>
+        ))}
       </Slider>
       <style jsx>{`
         .column {
